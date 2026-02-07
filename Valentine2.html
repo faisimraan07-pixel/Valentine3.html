@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Hey Cutie ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        background: linear-gradient(135deg, #ff6a88, #ff99ac);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Segoe UI', sans-serif;
+        color: white;
+        text-align: center;
+        overflow: hidden;
+    }
+
+    .box {
+        background: rgba(255,255,255,0.18);
+        padding: 25px;
+        border-radius: 22px;
+        width: 90%;
+        max-width: 380px;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+        position: relative;
+    }
+
+    img {
+        width: 100%;
+        border-radius: 16px;
+        margin-bottom: 15px;
+    }
+
+    h2 {
+        margin-bottom: 20px;
+    }
+
+    button {
+        padding: 12px 28px;
+        border-radius: 30px;
+        border: none;
+        font-size: 16px;
+        cursor: pointer;
+        margin: 8px;
+    }
+
+    #yesBtn {
+        background: #00e676;
+        color: #004d40;
+    }
+
+    #noBtn {
+        background: #ff5252;
+        color: white;
+        position: absolute;
+    }
+
+    #warning {
+        margin-top: 15px;
+        font-size: 14px;
+    }
+
+    iframe {
+        margin-top: 15px;
+        border-radius: 12px;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="box" id="mainBox">
+    <img src="https://i.imgur.com/7GQZ6yM.jpg" alt="Romantic Love">
+    <h2>Hey Cutie 💕<br>Will you be my Valentine?</h2>
+
+    <button id="yesBtn" onclick="yesClicked()">YES 😍</button>
+    <button id="noBtn" onmouseover="runAway()" onclick="runAway()">NO 😝</button>
+
+    <div id="warning"></div>
+</div>
+
+<script>
+    function runAway() {
+        const noBtn = document.getElementById("noBtn");
+        const x = Math.random() * (window.innerWidth - 120);
+        const y = Math.random() * (window.innerHeight - 60);
+
+        noBtn.style.left = x + "px";
+        noBtn.style.top = y + "px";
+
+        document.getElementById("warning").innerHTML =
+            "No no baby 😘 you allowed to click only YES ❤️";
+    }
+
+    function yesClicked() {
+        document.getElementById("mainBox").innerHTML = `
+            <img src="https://i.imgur.com/8Km9tLL.jpg" alt="Heart Love">
+            <h2>Yayyyy 💖😍</h2>
+            <p>என் இதயத்தின் Valentine நீ தான் ❤️</p>
+
+            <iframe width="100%" height="200"
+            src="https://www.youtube.com/embed/5Eqb_-j3FDA?autoplay=1"
+            frameborder="0"
+            allow="autoplay; encrypted-media"
+            allowfullscreen></iframe>
+        `;
+    }
+</script>
+
+</body>
+</html>
